@@ -1,0 +1,4 @@
+SELECT Last_Name, Job_Id, Hire_Date 
+FROM employees 
+WHERE Hire_Date 
+BETWEEN 1998-02-20 AND 1998-05-01;
