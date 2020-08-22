@@ -1,0 +1,3 @@
+1. SELECT CONCAT(CONCAT(CONCAT(CONCAT(First_Name,' '),Last_Name), ' is a '),Job_Id) AS 'Employee and Title' FROM employees;
+2. SELECT Last_Name,Salary,Commission_pct FROM employees WHERE Commission_pct IS NOT NULL ORDER BY Salary DESC,Commission_pct DESC;
+3. SELECT Last_Name,Hire_Date FROM employees WHERE Hire_Date BETWEEN '1994-01-01' AND '1994-12-12';
