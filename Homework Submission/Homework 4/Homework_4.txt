@@ -1,0 +1,30 @@
+1. SELECT job_id,first_Name, last_Name, 
+	ROUND(MAX(salary),0) "Maximum", 
+	ROUND(MIN(salary),0) "Minimum", 
+	ROUND(SUM(salary),0) "Sum", 
+	ROUND(AVG(salary),0) "Average" 
+	FROM employees 
+	GROUP BY job_Id;
+
+2. SELECT first_Name, last_Name, manager_id, salary, MAX(salary) 
+    FROM employees 
+	WHERE manager_id IS NOT NULL 
+	GROUP BY manager_id 
+	HAVING MIN(salary>6000) 
+	ORDER BY salary DESC;
+
+3. SELECT d.department_name "Name", d.location_id "Location ",
+COUNT(*) "Number of People",
+ROUND(AVG(salary),2) "Salary"
+FROM employees e, departments d
+WHERE e.department_id = d.department_id
+GROUP BY d.department_name, d.location_id;
+
+4. SELECT job_id, COUNT(*)
+FROM employees
+GROUP BY job_id;
+
+5. SELECT last_Name, salary,commission_pct 
+	FROM employees 
+	WHERE commission_pct IS NULL 
+	ORDER BY salary,commission_pct DESC;
