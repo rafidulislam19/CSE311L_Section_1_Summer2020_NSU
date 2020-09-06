@@ -1,0 +1,22 @@
+1. SELECT ROUND (MAX(salary),0) "Maximum",
+          ROUND (MIN(salary),0) "Minimum",
+          ROUND (SUM(salary),0) "Sum",
+	  ROUND (AVG(salary),0) "Average" FROM employees;
+
+2. SELECT job_id,
+		 ROUND (MAX(salary),0) "Maximum",
+                 ROUND (MIN(salary),0) "Minimum",
+          	 ROUND (SUM(salary),0) "Sum",
+	  	 ROUND (AVG(salary),0) "Average" FROM employees GROUP BY job_id;
+
+3. SELECT job_id,COUNT(*) FROM employees GROUP BY job_id;
+
+4. SELECT manager_id, MIN(salary) FROM employees WHERE manager_id IS NOT NULL GROUP BY manager_id HAVING MIN(salary) > 6000 ORDER BY MIN(salary) DESC;
+
+5. SELECT d.department_name "Name",
+	  d.location_id "Location",
+	  COUNT(*) "Number of People",
+	  ROUND (AVG(salary),2) "Salary" 
+	FROM employees e,departments d 
+	WHERE e.department_id=d.department_id
+	GROUP BY d.department_name,d.location_id;

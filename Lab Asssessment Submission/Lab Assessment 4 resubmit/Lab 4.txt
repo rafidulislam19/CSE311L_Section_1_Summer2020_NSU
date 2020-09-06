@@ -1,0 +1,10 @@
+1. SELECT e.last_name,e.department_id,d.department_name FROM employees e,departments d WHERE e.department_id=d.department_id;
+
+2. SELECT e.last_name,d.department_name,d.location_id,l.city FROM employees e,departments d,locations l WHERE e.department_id=d.department_id AND d.location_id=l.location_id
+AND e.commission_pct IS NOT NULL;
+
+3. SELECT e.last_name,e.job_id,e.department_id,d.department_name FROM employees e JOIN departments d ON (e.department_id=d.department_id) JOIN locations l ON (d.location_id=l.location_id) WHERE LOWER(l.city)='toronto';
+
+4. SELECT last_name,salary,commission_pct FROM employees WHERE commission_pct is not null ORDER BY salary desc,commission_pct desc;
+
+5. SELECT w.last_name "Employee", w.employee_id "Emp#",m.last_name "Manager",m.employee_id "Mgr#" FROM employees w JOIN employees m ON (w.manager_id=m.employee_id);
